@@ -1,0 +1,30 @@
+<div id="confirm" class="modal modal-5 fade" aria-labelledby="addConfirml" data-backdrop="static" ak-modal="modal.modalConfirm.isShowModalConfirm">
+  <div class="modal-dialog modal-6" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="modal.modalConfirm.isShowModalConfirm = false;" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"><i class="fa fa-exclamation-triangle fa-1x" aria-hidden="true" style="color:#ceca2a"></i> @Resources.General.msgConfirmTitle</h4>
+      </div>
+      <div class="modal-body">
+        <p>Thông báo</p>
+        <div class="row" >
+          <div class="col-sm-12">
+            chào
+            <<!--div>
+              <label class="col-ms-4 control-label">Ghi chú</label>
+            </div>
+            <div class="col-ms-8">
+              <textarea name="notes" type="text" class="form-control form-control-border" ng-model="modal.modalConfirm.msgComment" maxlength="250" rows="2"></textarea>
+            </div>-->
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-info">
+          <i class="fa fa-check"></i>
+        </button>
+        <button type="button" class="btn btn-default" ng-click="modal.modalConfirm.isShowModalConfirm = false"><i class="fa fa-remove"> @Resources.General.msgBtnCancel</i></button>
+      </div>
+    </div>
+  </div>
+</div>

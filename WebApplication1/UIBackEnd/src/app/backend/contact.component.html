@@ -1,0 +1,241 @@
+  <!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="card card-default">
+      <div class="card-header">
+        <h3 class="card-title">TÌM KIẾM</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse">
+            <i class="fas fa-minus"></i>
+          </button>
+        </div>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>Tìm kiếm</label>
+              <input type="text" class="form-control" [(ngModel)]="filter.searchString"  > 
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-2">
+            <div class="form-group">
+              <label>Từ ngày</label>
+              <input type="date" class="form-control" [(ngModel)]="filter.fromDate" />
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label>Đến ngày</label>
+              <input type="date" class="form-control"  [(ngModel)]="filter.toDate" />
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label>Sử dụng</label>
+              <select class="form-control select2" style="width: 100%;" [(ngModel)]="filter.status">
+                <option value="-1">Tất cả</option>
+                <option value="1">Đang chờ</option>
+                <option value="2">Đã trả lời</option>
+                <option value="0">Đã xóa</option>
+              </select>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-3">
+            <div class="formsearch">
+              <button type="submit" class="btn search btn-primary" (click)="onSearch()">Tìm</button>
+              <button type="button" class="btn search btn-success" (click)="onAdd()" data-toggle="modal" data-target="#exampleModal">Thêm mới</button>
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+        <div class="row">
+
+        </div>
+        <!-- /.row -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <table id="example1" class="table  table-sm table-bordered table-hover table-striped">
+              <thead>
+                <tr class="table-primary">
+                  <th class="text-center width_50">#</th>
+                  <th>Tiêu đề </th>
+                  <th class="width_150">Họ tên</th>
+                  <th class="width_150">Email</th>
+                  <th class="width_150">Điện thoại</th>
+                  <th class="width_150">Ngày tạo</th>
+                  <th class="width_100">Trạng thái</th>
+                  <th class="width_40"></th>
+                  <th class="width_40"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngIf="results.length==0">
+                  <td colspan="20">
+                    Không có dữ liệu được tìm thấy
+                  </td>
+                </tr>
+                <tr *ngFor="let item of results; index as i">
+                  <td class="text-center">{{i+1}}</td>
+                  <td>{{item.Subject}}</td>
+                  <td>{{item.FullName}}</td>
+                  <td>{{item.Email}}</td>
+                  <td>{{item.PhoneNumber}}</td>
+                  <td class="text-center">{{item.CreatedDate | date:'dd/MM/yyyy HH:mm'}}</td>
+                  <td class="text-center">
+                    <div *ngIf="item.Status==0"> <div class="status-delete"></div> Đã xóa</div>
+                    <div *ngIf="item.Status==1"> <div class="status-watting"></div> Đang chờ </div>
+                    <div *ngIf="item.Status==2"> <div class="status-replied"></div> Đã trả lời </div>
+                  </td>
+                  <td class="text-center">
+                    <button type="button" class="btn" (click)="onEdit(item)" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-edit"></i></button>
+                  </td>
+                  <td class="text-center">
+                    <button type="button" class="btn" (click)="onDeleteConfirm(item)">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th colspan="20">
+                    <div class="col-md-12">
+                      <div class="form-group row">
+                        <div class="col-sm-10">
+                          <ul class="pagination" *ngIf="paging.pages.length>0">
+                            <li class="page-item"><a class="page-link" (click)="onChangePagePrevious()"><<</a></li>
+                            <li class="page-item"><a class="page-link" (click)="onChangePagePrevious()"><</a></li>
+                            <li class="page-item" *ngFor="let item of paging.pages; index as i"><a class="page-link" (click)="onChangePageIndex(i+1)">{{i+1}}</a></li>
+                            <li class="page-item"><a class="page-link" (click)="onChangePageNext()">></a></li>
+                            <li class="page-item"><a class="page-link" (click)="onChangePageNext()">>></a></li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-1">
+                          <select class="form-control select2" [(ngModel)]="paging.pageSize" (change)="onChangePageSize(paging.pageSize)">
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                          </select>
+                        </div>
+                        <label for="LinKCode" class="col-sm-1 col-form-label"> Số dòng: {{paging.totalRows}}</label>
+                      </div>
+                      <!-- /.form-group -->
+                    </div>
+                   
+                  </th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-50" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">GIỚI THIỆU</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label for="Subject" class="col-sm-2 col-form-label">Tiêu đề</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="Subject" [(ngModel)]="row.Subject">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="FullName" class="col-sm-2 col-form-label">Họ tên</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="FullName" [(ngModel)]="row.FullName">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="Email" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="Email" [(ngModel)]="row.Email">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="PhoneNumber" class="col-sm-2 col-form-label">Điện thoại</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="PhoneNumber" [(ngModel)]="row.PhoneNumber">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="Contents" class="col-sm-2 col-form-label">Nội dung</label>
+              <div class="col-sm-10">
+                <textarea type="text" class="form-control" id="Contents" [(ngModel)]="row.Contents" rows="5"></textarea>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="Contents" class="col-sm-2 col-form-label">Trạng thái</label>
+              <div class="col-sm-10">
+                <select class="form-control select2" [(ngModel)]="row.Status">
+                  <option value="-1">-- Vui lòng chọn --</option>
+                  <option value="0">Đã xóa</option>
+                  <option value="1">Đang chờ</option>
+                  <option value="2">Đã trả lời</option>
+                </select>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="onSave()">Lưu</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="modalConfirm" tabindex="-1" role="dialog" aria-labelledby="modalConfirmLabel" aria-hidden="true">
+  <div class="modal-dialog modal-40" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">THÔNG BÁO</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn có muốn xóa nhóm <strong>{{itemDelete.AboutName}}</strong> này không?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="onDelete()">Đồng ý</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

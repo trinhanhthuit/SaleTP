@@ -1,0 +1,152 @@
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center">
+  <div style="width:100%;background: #fff;">
+    <div class="menu_lang">
+      <span> <i class="bx bx-mail-send" style="font-size: 16px;"></i> <a href="mailto:contact@example.com">contact@example.com</a></span>
+      <span> <i class="bx bx-phone-call" style="font-size: 16px;"></i> 0981 686 625</span>
+      <span><a routerLink="cart"><i class="bx bx-cart-alt" style="font-size: 16px;"></i> Giỏ hàng ({{addToCart.quantity}})</a></span>
+      <span class="flag bg_active">
+        <img src="../assets/img/flag_icon/flag-vn.png" style="width:20px" />
+        VN
+      </span>
+      <span class="flag">
+        <img src="../assets/img/flag_icon/flag-usa.png" style="width:20px" />
+        EN
+      </span>
+      <!--<app-product (messageEvent)="receiveCart($event)"></app-product>-->
+    </div>
+    <div class="header-address header-container d-flex align-items-center" style="height:30px"></div>
+    <div class="header-container d-flex align-items-center">
+      <div class="logo mr-auto">
+        <img src="../assets/img/logo-tanphat2.png" height="100%" />
+      </div>
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li [ngClass]="{'drop-down': item.SubMenu1.length>0, '': item.SubMenu1.length==0}" *ngFor="let item of menus;">
+            <a [routerLink]="['/',item.MenuCode]">{{item.MenuName}}</a>
+            <ul>
+              <!--<li><a routerLink="/san-pham/hik">HIKVISION</a></li>-->
+              <li [ngClass]="{'drop-down': item1.SubMenu2.length>0, '': item1.SubMenu2.length==0}" *ngFor="let item1 of item.SubMenu1;">
+                <a [routerLink]="['/',item.MenuCode,item1.MenuCode]">{{item1.MenuName}}</a>
+                <ul>
+                  <li *ngFor="let item2 of item1.SubMenu2;"> <a routerLink="/{{item.MenuCode}}/{{item2.MenuCode}}">{{item2.MenuName}}</a></li>
+                </ul>
+              </li>
+            </ul>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div><!-- End Header Container -->
+  </div>
+</header><!-- End Header -->
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+  <!--<div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">-->
+  <!--<h1>Your New Online Presence with Bethany</h1>
+  <h2>We are team of talented designers making websites with Bootstrap</h2>
+  <a href="#about" class="btn-get-started scrollto">Get Started</a>-->
+  <!--</div>-->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="http://localhost:44343/upload/banner/banner2.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="http://localhost:44343/upload/banner/banner2.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</section>
+<!-- End Hero -->
+<main id="main">
+  <router-outlet></router-outlet>
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->
+<footer id="footer">
+
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h3>Camera Tấn Phát</h3>
+          <p>
+            A108 Adam Street <br>
+            New York, NY 535022<br>
+            United States <br><br>
+            <strong>Phone:</strong> +1 5589 55488 55<br>
+            <strong>Email:</strong> info@example.com<br>
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 footer-newsletter">
+          <h4>Join Our Newsletter</h4>
+          <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+          <form action="" method="post">
+            <input type="email" name="email"><input type="submit" value="Subscribe">
+          </form>
+          <div class="social-links text-center text-md-right pt-3 pt-md-0">
+            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>1
+</footer><!-- End Footer -->
+
+
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+<div id="notification">
+  {{msgNotification}}
+</div>
+
+

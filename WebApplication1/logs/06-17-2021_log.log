@@ -1,0 +1,6 @@
+2021-06-17 17:04:36,561 ERROR  Sale.Business.ProductBO: System.NullReferenceException: Object reference not set to an instance of an object.
+   at Sale.Business.ProductBO.GetData(String langId, String cateid) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\Sale.Business\Business\ProductBO.cs:line 32 
+2021-06-17 17:07:06,576 ERROR  Sale.Business.ProductBO: System.NullReferenceException: Object reference not set to an instance of an object.
+   at Sale.Business.ProductBO.GetData(String langId, String cateid) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\Sale.Business\Business\ProductBO.cs:line 32 
+2021-06-17 17:08:16,251 ERROR  Sale.Business.ProductBO: System.NullReferenceException: Object reference not set to an instance of an object.
+   at Sale.Business.ProductBO.GetData(String langId, String cateid) 

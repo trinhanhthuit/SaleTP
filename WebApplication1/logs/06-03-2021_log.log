@@ -1,0 +1,108 @@
+2021-06-03 10:12:24,304 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:12:26,278 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:12:26,545 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:12:35,560 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:12:35,900 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:12:36,165 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:13:03,230 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:13:03,255 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:13:03,283 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:14:30,137 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:14:30,388 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:14:30,478 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:28:06,744 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:28:07,069 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:28:07,411 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:28:28,239 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:28:46,089 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:29:07,678 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:29:07,701 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:29:08,042 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:29:43,011 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:29:43,337 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:29:43,604 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:30:35,247 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:30:35,575 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:30:35,844 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:43:12,951 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:43:13,219 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:43:13,281 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:43:32,787 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:43:33,119 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:43:33,390 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:49:00,124 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:50:03,632 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:50:03,661 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 
+2021-06-03 10:50:04,001 ERROR WebApplication1.Controllers.ProductController System.MissingMethodException: Method not found: 'Int32 Sale.Data.Contact.get_ContactID()'.
+   at Sale.Business.ContactBO.Save(Contact contact)
+   at WebApplication1.Controllers.ProductController.Contact(Contact contact) in D:\ANHTHU\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\WebApplication1\Controllers\ProductController.cs:line 412 

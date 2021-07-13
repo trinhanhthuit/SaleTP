@@ -1,0 +1,37 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { BaseService } from 'src/app/shared/base.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+@Injectable()
+export class BackEndService extends BaseService {
+
+  constructor(http: HttpClient) {
+    super(http);
+  }
+  getInitData(langid: string): Observable<any> {
+    const url = '/api/product/GetInitData?langId=' + langid ;
+    return this.get(url);
+  }
+  getDataProduct(searchString: string, isActive: number, langid: string, pageIndex: number, pageSize: number): Observable<any> {
+    const url = '/api/product/GetProduct?searchString=' + searchString + '&isActive=' + isActive + '&langId=' + langid + '&pageIndex=' + pageIndex + '&pageSize=' + pageSize;
+    return this.get(url);
+  }
+  getImage(productId: string): Observable<any> {
+    const url = '/api/product/GetImage?productId=' + productId;
+    return this.get(url);
+  }
+  saveProduct(row:any): Observable<any> {
+    const url = '/api/product/SaveProduct';
+    return this.post(url, row);
+  }
+  uploadFile(file: any): Observable<any> {
+    const url = '/api/FileUpload/UploadFiles';
+    return this.post(url, file);
+  }
+  deleteProduct(row: any): Observable<any> {
+    const url = '/api/product/DeleteProduct';
+    return this.post(url, row);
+  }
+}

@@ -1,0 +1,20 @@
+<div class="col-md-12">
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <ul class="pagination" *ngIf="paging.pages.length>0">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item" *ngFor="let item of paging.pages; index as i"><a class="page-link" (click)="onChangePageIndex(i+1)">{{i+1}}</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-1">
+      <select class="form-control select2" [(ngModel)]="paging.pageSize" (click)="onChangePageSize(paging.pageSize)">
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+    <label for="LinKCode" class="col-sm-1 col-form-label"> Số dòng: {{paging.totalRows}}</label>
+  </div>
+  <!-- /.form-group -->
+</div>

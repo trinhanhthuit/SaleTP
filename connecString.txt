@@ -1,0 +1,4 @@
+ public DBEntities(string ConnectionString = "DBEntities") : base("name=" + ConnectionString)
+        {
+            this.Configuration.LazyLoadingEnabled = false;
+        }

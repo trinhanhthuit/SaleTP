@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="AboutID" />
+    </Key>
+    <Property Name="AboutID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="uniqueidentifier" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="AboutLang">
+    <Key>
+      <PropertyRef Name="AboutLangID" />
+    </Key>
+    <Property Name="AboutLangID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AboutID" Type="uniqueidentifier" />
+    <Property Name="LangID" Type="varchar" MaxLength="50" />
+    <Property Name="AboutTitle" Type="nvarchar(max)" />
+    <Property Name="AboutContent" Type="nvarchar(max)" />
+    <Property Name="AboutContent2" Type="nvarchar(max)" />
+    <Property Name="AboutSubContent" Type="nvarchar(max)" />
+    <Property Name="AboutContent3" Type="nvarchar(max)" />
+    <Property Name="AboutName" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryCode" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiBy" Type="uniqueidentifier" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Ids" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="CategoryLang">
+    <Key>
+      <PropertyRef Name="CategoryLangID" />
+    </Key>
+    <Property Name="CategoryLangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="LangID" Type="varchar" MaxLength="20" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Contents" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="SearchString" Type="varchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="bigint" Nullable="false" />
+    <Property Name="CustomerCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="DistrictID" Type="bigint" />
+    <Property Name="ProvinceID" Type="bigint" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="DistrictID" />
+    </Key>
+    <Property Name="DistrictID" Type="bigint" Nullable="false" />
+    <Property Name="DistrictCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="DistrictName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ProvinceID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedByDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="uniqueidentifier" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ImagePath1" Type="varchar(max)" />
+    <Property Name="ImagePath2" Type="varchar(max)" />
+    <Property Name="LinkTwitter" Type="varchar(max)" />
+    <Property Name="LinkFacebook" Type="varchar(max)" />
+    <Property Name="LinkInstagram" Type="varchar(max)" />
+    <Property Name="LinkLinkedin" Type="varchar(max)" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="EmployeeLang">
+    <Key>
+      <PropertyRef Name="EmployeeLangID" />
+    </Key>
+    <Property Name="EmployeeLangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="LangID" Type="varchar" MaxLength="10" />
+    <Property Name="EmployeeName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Position" Type="nvarchar" MaxLength="200" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="Content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="ImageID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ImagePath" Type="varchar(max)" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="PathID" Type="uniqueidentifier" />
+    <Property Name="IsDefault" Type="bit" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="ImageCategory">
+    <Key>
+      <PropertyRef Name="ImageCategoryID" />
+    </Key>
+    <Property Name="ImageCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageCategoryName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="MenuID" Type="bigint" Nullable="false" />
+    <Property Name="MenuCode" Type="varchar" MaxLength="20" />
+    <Property Name="MenuName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="LangID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="MenuType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="bigint" Nullable="false" />
+    <Property Name="OrderCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="CustomerID" Type="bigint" Nullable="false" />
+    <Property Name="SubTotal" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Discount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Total" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Status" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailID" />
+    </Key>
+    <Property Name="OrderDetailID" Type="bigint" Nullable="false" />
+    <Property Name="OrderID" Type="bigint" Nullable="false" />
+    <Property Name="ProductID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Quantity" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SubTotal" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Discount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Total" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LinkCode" Type="varchar" MaxLength="200" />
+    <Property Name="ProductCode" Type="varchar" MaxLength="20" />
+    <Property Name="SalePrice" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="DiscountPrice" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiBy" Type="uniqueidentifier" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="IsHot" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="ImagePath1" Type="varchar(max)" />
+    <Property Name="ImagePath2" Type="varchar(max)" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="SaleQuanlity" Type="bigint" />
+  </EntityType>
+  <EntityType Name="ProductLang">
+    <Key>
+      <PropertyRef Name="ProductLangID" />
+    </Key>
+    <Property Name="ProductLangID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductID" Type="uniqueidentifier" />
+    <Property Name="LangID" Type="varchar" MaxLength="20" />
+    <Property Name="ProductName" Type="nvarchar(max)" />
+    <Property Name="ShortContent" Type="nvarchar(max)" />
+    <Property Name="LongContent" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="bigint" Nullable="false" />
+    <Property Name="ProvinceCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ProvinceName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ServiceID" />
+    </Key>
+    <Property Name="ServiceID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LinkCode" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiBy" Type="uniqueidentifier" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="ImagePath1" Type="varchar(max)" />
+    <Property Name="ImagePath2" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ServiceLang">
+    <Key>
+      <PropertyRef Name="ServiceLangID" />
+    </Key>
+    <Property Name="ServiceLangID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ServiceID" Type="uniqueidentifier" />
+    <Property Name="LangID" Type="varchar" MaxLength="10" />
+    <Property Name="ServiceName" Type="nvarchar(max)" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="ShortContent" Type="nvarchar(max)" />
+    <Property Name="LongContent" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Testimonial">
+    <Key>
+      <PropertyRef Name="TestimonialID" />
+    </Key>
+    <Property Name="TestimonialID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImagePath1" Type="varchar(max)" />
+    <Property Name="ImagePath2" Type="varchar(max)" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="TestimonialLang">
+    <Key>
+      <PropertyRef Name="TestimonialLangID" />
+    </Key>
+    <Property Name="TestimonialLangID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TestimonialID" Type="int" />
+    <Property Name="LangID" Type="varchar" MaxLength="10" />
+    <Property Name="CustomerName" Type="nvarchar(max)" />
+    <Property Name="Position" Type="nvarchar(max)" />
+    <Property Name="Content" Type="nvarchar(max)" />
+    <Property Name="SubContent" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TextData">
+    <Key>
+      <PropertyRef Name="TextID" />
+    </Key>
+    <Property Name="TextID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LangID" Type="varchar" MaxLength="20" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" />
+    <Property Name="ShortContent" Type="ntext" />
+    <Property Name="LongContent" Type="ntext" />
+    <Property Name="PageCode" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="WhyUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedByDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="uniqueidentifier" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ImagePath1" Type="varchar(max)" />
+    <Property Name="ImagePath2" Type="varchar(max)" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="WhyUSDetail">
+    <Key>
+      <PropertyRef Name="WhyUSDetailID" />
+    </Key>
+    <Property Name="WhyUSDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedByDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="uniqueidentifier" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ImagePath1" Type="varchar(max)" />
+    <Property Name="ImagePath2" Type="varchar(max)" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="WhyUSDetailLang">
+    <Key>
+      <PropertyRef Name="WhyUSDetailLangID" />
+    </Key>
+    <Property Name="WhyUSDetailLangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WhyUSDetailID" Type="int" />
+    <Property Name="LangID" Type="varchar" MaxLength="10" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="SubContent" Type="nvarchar(max)" />
+    <Property Name="Content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WhyUSLang">
+    <Key>
+      <PropertyRef Name="WhyUSLangID" />
+    </Key>
+    <Property Name="WhyUSLangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" />
+    <Property Name="LangID" Type="varchar" MaxLength="10" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="SubContent" Type="nvarchar(max)" />
+    <Property Name="Content" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_District_Province">
+    <End Role="Province" Type="Self.Province" Multiplicity="0..1" />
+    <End Role="District" Type="Self.District" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="District">
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AboutLang" EntityType="Self.AboutLang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CategoryLang" EntityType="Self.CategoryLang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeLang" EntityType="Self.EmployeeLang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImageCategory" EntityType="Self.ImageCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductLang" EntityType="Self.ProductLang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Province" EntityType="Self.Province" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceLang" EntityType="Self.ServiceLang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Testimonial" EntityType="Self.Testimonial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TestimonialLang" EntityType="Self.TestimonialLang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TextData" EntityType="Self.TextData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WhyUS" EntityType="Self.WhyUS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WhyUSDetail" EntityType="Self.WhyUSDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WhyUSDetailLang" EntityType="Self.WhyUSDetailLang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WhyUSLang" EntityType="Self.WhyUSLang" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_District_Province" Association="Self.FK_District_Province">
+      <End Role="Province" EntitySet="Province" />
+      <End Role="District" EntitySet="District" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

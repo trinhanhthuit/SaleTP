@@ -1,0 +1,342 @@
+  <!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="card card-default">
+      <div class="card-header">
+        <h3 class="card-title" appAddText>TÌM KIẾM</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse">
+            <i class="fas fa-minus"></i>
+          </button>
+        </div>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>Tìm kiếm</label>
+              <input type="text" class="form-control" [(ngModel)]="filter.searchString">
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-2">
+            <div class="form-group">
+              <label>Sử dụng</label>
+              <select class="form-control select2" style="width: 100%;" [(ngModel)]="filter.isActive" (change)="onSearch()">
+                <option value="-1">Tất cả</option>
+                <option value="1">Sử dụng</option>
+                <option value="0">Không sử dụng</option>
+              </select>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label>Ngôn ngữ</label>
+              <select class="form-control select2" style="width: 100%;" [(ngModel)]="filter.langId" (change)="onSearch()">
+                <option value="vi-VN">Việt Nam</option>
+                <option value="en-US">English</option>
+              </select>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label>Sản phẩm nổi bật</label>
+              <select class="form-control select2" style="width: 100%;" [(ngModel)]="filter.isHot" (change)="onSearch()">
+                <option value="-1">Tất cả</option>
+                <option value="1">Nổi bật</option>
+                <option value="0">Thường</option>
+
+              </select>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-3">
+            <div class="formsearch">
+              <button type="submit" class="btn search btn-primary" (click)="onSearch()">Tìm</button>
+              <button type="button" class="btn search btn-success" (click)="onAdd()" data-toggle="modal" data-target="#exampleModal">Thêm mới</button>
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+        <div class="row">
+
+        </div>
+        <!-- /.row -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <table id="example1" class="table  table-sm table-bordered table-hover table-striped">
+              <thead>
+                <tr class="table-primary">
+                  <th class="text-center width_50">#</th>
+                  <th class="width_150">Link Code</th>
+                  <th class="width_100">Mã SP</th>
+                  <th>Tên SP</th>
+                  <th class="width_120">Giá bán</th>
+                  <th class="width_120">Giá đã giảm</th>
+                  <th class="width_120">Nhóm SP</th>
+                  <th class="width_80">Hình ảnh</th>
+                  <th class="width_80">Hot</th>
+                  <th class="width_100">Sử dụng</th>
+                  <th class="width_40"></th>
+                  <th class="width_40"></th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of products; index as i">
+                  <td class="text-center">{{i+1}}</td>
+                  <td>{{item.LinkCode}}</td>
+                  <td>{{item.ProductCode}}</td>
+                  <td>{{item.ProductName}}</td>
+                  <td class="text-right">{{item.SalePrice|number}}</td>
+                  <td class="text-right">{{item.DiscountPrice|number}}</td>
+                  <td>{{item.CategoryName}}</td>
+                  <td class="text-center">
+                    <i class="fas fa-check" *ngIf="item.ImagePath!=''"></i>
+                  </td>
+                  <td class="text-center">
+                    <i class="fas fa-check" *ngIf="item.IsHot"></i>
+                  </td>
+                  <td class="text-center">
+                    <i class="fas fa-check" *ngIf="item.IsActive"></i>
+                  </td>
+                  <td class="text-center">
+                    <button type="button" class="btn" (click)="onEdit(item)" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-edit"></i></button>
+                  </td>
+                  <td class="text-center">
+                    <button type="button" class="btn" (click)="onDeleteConfirm(item)">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th colspan="20">
+                    <div class="col-md-12">
+                      <div class="form-group row">
+                        <div class="col-sm-10">
+                          <ul class="pagination" *ngIf="paging.pages.length>0">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item" *ngFor="let item of paging.pages; index as i"><a class="page-link" (click)="onChangePageIndex(i+1)">{{i+1}}</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-1">
+                          <select class="form-control select2" [(ngModel)]="paging.pageSize" (change)="onChangePageSize(paging.pageSize)">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                          </select>
+                        </div>
+                        <label for="LinKCode" class="col-sm-1 col-form-label"> Số dòng: {{paging.totalRows}}</label>
+                      </div>
+                      <!-- /.form-group -->
+                    </div>
+
+                  </th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-80" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">SẢN PHẨM</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" href="#idProduct" role="tab" data-toggle="tab" aria-selected="true">THÔNG TIN SẢN PHẨM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#idIMage" role="tab" data-toggle="tab">HÌNH ẢNH</a>
+          </li>
+
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active show" id="idProduct">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label for="LinKCode" class="col-sm-3 col-form-label">Link Code</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="LinKCode" [(ngModel)]="row.LinkCode">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="ProductCode" class="col-sm-3 col-form-label">Mã SP</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="ProductCode" [(ngModel)]="row.ProductCode">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="ProductName" class="col-sm-3 col-form-label">Tên SP</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="ProductName" [(ngModel)]="row.ProductName">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label for="SalePrice" class="col-sm-3 col-form-label">Giá bán</label>
+                  <div class="col-sm-3">
+                    <input type="number" class="form-control" id="salePrice" [(ngModel)]="row.SalePrice">
+                  </div>
+                  <label for="DiscountPrice" class="col-sm-3 col-form-label">Giá giảm</label>
+                  <div class="col-sm-3">
+                    <input type="number" class="form-control" id="discountPrice" [(ngModel)]="row.DiscountPrice">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Category" class="col-sm-3 col-form-label">Nhóm sản phẩm</label>
+                  <div class="col-sm-9">
+                    <select class="form-control select2" style="width: 100%;" [(ngModel)]="row.CategoryID">
+                      <option value="-1">--Vui lòng chọn--</option>
+                      <option value="{{item.CategoryID}}" *ngFor="let item of categories;">{{item.CategoryName}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Category" class="col-sm-3 col-form-label"></label>
+                  <div class="col-sm-9">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="IsHot" [(ngModel)]="row.IsHot" />
+                      <label class="form-check-label" for="IsHot">Hot</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="IsActive" [(ngModel)]="row.IsActive" />
+                      <label class="form-check-label" for="IsActive">Sử dụng</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Nội dung ngắn</label>
+                  <div class="shortContent">
+                    Place <em>some</em> <u>text</u> <strong>here</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Nội dung chính</label>
+                  <div class="longContent">
+                    Place <em>some</em> <u>text</u> <strong>here</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="idIMage">
+            <div class="card card-solid">
+              <div class="card-body pb-0">
+                <div class="row">
+                 
+                  <form [formGroup]="imageForm">
+                    <label>Kích thước: 300 x 225 (px)</label>
+                    <div class="form-group">
+                      <input formControlName="file" style="height: unset;"
+                             id="file"
+                             type="file"
+                             class="form-control"
+                             (change)="onFileChange($event)"  multiple>
+                    </div>
+
+                  </form>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column" *ngFor="let item of imageTemps; index as i">
+                    <div class="card bg-light d-flex flex-fill">
+                      <div class="card-body pt-0">
+                        <div class="row">
+                          <div class="col-12">
+                            <img [src]="item.ImagePath" style="width:100%;height:220px" />
+                          </div>
+                        </div>
+                        <div class="card-footer">
+                          <div class="text-right">
+                            <a class="btn btn-sm btn-light" style="margin-right:5px">
+                              <div class="form-check form-check-inline" style="margin:unset">
+                                <input type="checkbox" [(ngModel)]="item.IsDefault" />
+                              </div>
+                            </a>
+                            <button class="btn btn-sm btn-primary" (click)="onDeleteImage(i)">
+                              <i class="fas fa-trash-alt"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="onUpload()">Lưu</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="modalConfirm" tabindex="-1" role="dialog" aria-labelledby="modalConfirmLabel" aria-hidden="true">
+  <div class="modal-dialog modal-40" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">THÔNG BÁO</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn có muốn xóa sản phẩm <strong>{{itemDelete.ProductName}}</strong> này không?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="onDelete()">Đồng ý</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

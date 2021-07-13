@@ -1,0 +1,97 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+//using Microsoft.AspNetCore.Mvc;
+using Sale.Models;
+using Sale.Business;
+using Microsoft.AspNetCore.Cors;
+
+namespace WebApplication1.Controllers
+{
+    public class ValuesController : ApiController
+    {
+        IProduct productBO;
+        IEmployee employeeBO;
+        IWhyUS whyUSBO;
+        ITextData textDataBO;
+        IAbout aboutBO;
+        public ValuesController()
+        {
+            this.productBO = this.productBO ?? new ProductBO();
+            this.employeeBO = this.employeeBO ?? new EmployeeBO();
+            this.whyUSBO = this.whyUSBO ?? new WhyUSBO();
+            this.textDataBO = this.textDataBO ?? new TextDataBO();
+            this.aboutBO = this.aboutBO ?? new AboutBO();
+        }
+
+        [HttpGet]
+        [EnableCors("AllowOrigin")]
+        public HttpResponseMessage GetHomeData(string langId)
+        {
+            var apiRespone = new ApiResponse { IsSuccess = true };
+            var dataResults = new HomeRespone();
+            dataResults.Products = productBO.GetData(langId);
+            dataResults.Categories = productBO.GetCategory(langId, 0);
+            dataResults.About = aboutBO.GetData(langId);
+            dataResults.Services = productBO.GetService(langId);
+            dataResults.LogoClients = productBO.GetImage(1, null);
+            dataResults.Testimonials = productBO.GetTestimonial(langId);
+            dataResults.Employees = employeeBO.GetData(3, langId);
+            dataResults.WhyUs = whyUSBO.GetData(langId);
+            dataResults.WhyUsDetails = whyUSBO.GetDataDetail(3, langId);
+            dataResults.TextDatas = textDataBO.GetData(langId, "HOME");
+            apiRespone.Data = dataResults;
+            apiRespone.Message = "Successfuly!";
+            var response = Request.CreateResponse(HttpStatusCode.OK, apiRespone);
+            return response;
+        }
+
+        [HttpGet]
+        public HttpResponseMessage GetServiceData(string langId)
+        {
+            var apiRespone = new ApiResponse { IsSuccess = true };
+            var dataResults = new ServiceRespone();
+            dataResults.Services = productBO.GetService(langId);
+            dataResults.TextData = textDataBO.GetData(langId, "SERVICES")[0];
+            apiRespone.Data = dataResults;
+            apiRespone.Message = "Successfuly!";
+            var response = Request.CreateResponse(HttpStatusCode.OK, apiRespone);
+            return response;
+        }
+
+        [HttpGet]
+        public HttpResponseMessage GetServiceDetailData(string langId, string linkCode)
+        {
+            var apiRespone = new ApiResponse { IsSuccess = true };
+            var dataResults = new ServiceDetailRespone();
+            var services = productBO.GetService(langId);
+            dataResults.ServiceRelations = services.Where(m => m.LinkCode != linkCode).ToList();
+            dataResults.Service = services.Where(m => m.LinkCode == linkCode).FirstOrDefault();
+            dataResults.TextData = textDataBO.GetData(langId, "SERVICES")[0];
+            apiRespone.Data = dataResults;
+            apiRespone.Message = "Successfuly!";
+            var response = Request.CreateResponse(HttpStatusCode.OK, apiRespone);
+            return response;
+        }
+
+        [HttpGet]
+        public HttpResponseMessage GetProductDetail(string langId, string linkCode)
+        {
+            var apiRespone = new ApiResponse { IsSuccess = true };
+            var dataResults = new ProductDetailRespone();
+            var products = productBO.GetData(langId);
+            dataResults.ProductDetail = products.Where(m => m.LinkCode == linkCode).FirstOrDefault();
+            dataResults.ProductPromotions = products.Where(m => m.SalePrice > m.DiscountPrice).ToList();
+            dataResults.ProductHots = products.Where(m => m.IsHot == true).ToList();
+            dataResults.TextData = textDataBO.GetData(langId, "PRODUCT")[0];
+            apiRespone.Data = dataResults;
+            apiRespone.Message = "Successfuly!";
+            var response = Request.CreateResponse(HttpStatusCode.OK, apiRespone);
+            return response;
+        }
+
+    }
+}

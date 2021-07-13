@@ -1,0 +1,84 @@
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4" data-aos="fade-right">
+        <div class="section-title">
+          <h2>Liên hệ</h2>
+          <p>Camera <span class="colorlogo">Tấn Phát</span></p>
+        </div>
+      </div>
+
+      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+        <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d980.0008553710641!2d106.6052418291782!3d10.73421899952191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ0JzAzLjIiTiAxMDbCsDM2JzIwLjgiRQ!5e0!3m2!1sen!2s!4v1615526563698!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+        <div class="info mt-4">
+          <i class="icofont-google-map"></i>
+          <h4>Địa chỉ:</h4>
+          <p>606/7/12/8/2A Hồ Học Lãm, Bình Trị Đông B, Bình Tân, HCM.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 mt-4">
+            <div class="info">
+              <i class="icofont-envelope"></i>
+              <h4>Email:</h4>
+              <p>lethanhbang@gmail.com</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="info w-100 mt-4">
+              <i class="icofont-phone"></i>
+              <h4>Điện thoại:</h4>
+              <p>+84 981.686.625</p>
+            </div>
+          </div>
+        </div>
+
+        <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
+          <div class="form-row">
+            <div class="col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Họ và tên" data-rule="minlen:4" [(ngModel)]="contact.fullName"
+                     data-msg="Vui lòng nhập họ tên và có ít nhất 4 ký tự" />
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-6 form-group">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Vui lòng nhập email" [(ngModel)]="contact.email" />
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Tiêu đề" data-rule="minlen:4" [(ngModel)]="contact.subject"
+                   data-msg="Vui lòng nhập tiêu đề ít nhất 8 ký tự" />
+            <div class="validate"></div>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Vui lòng nhập nội dung" placeholder="Nội dung"
+                      [(ngModel)]="contact.contents"></textarea>
+            <div class="validate"></div>
+          </div>
+          <div class="text-center"><button type="submit" (click)="onSaveContact()">Gửi</button></div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Contact Section -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Nội dung liên hệ của bạn đã được gửi, chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+

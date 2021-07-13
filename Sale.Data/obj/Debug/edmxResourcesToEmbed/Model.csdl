@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_PostPurchaseInvoice">
+      <Parameter Name="pID" Mode="In" Type="Guid" />
+      <Parameter Name="pError" Mode="InOut" Type="String" />
+      <Parameter Name="pErrorMessage" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UnPostPurchaseInvoice">
+      <Parameter Name="pID" Mode="In" Type="Guid" />
+      <Parameter Name="pError" Mode="InOut" Type="String" />
+      <Parameter Name="pErrorMessage" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PostPurchaseReturn">
+      <Parameter Name="pID" Mode="In" Type="Guid" />
+      <Parameter Name="pError" Mode="InOut" Type="String" />
+      <Parameter Name="pErrorMessage" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UnPostPurchaseReturn">
+      <Parameter Name="pID" Mode="In" Type="Guid" />
+      <Parameter Name="pError" Mode="InOut" Type="String" />
+      <Parameter Name="pErrorMessage" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PostSaleInvoice">
+      <Parameter Name="pID" Mode="In" Type="Guid" />
+      <Parameter Name="pError" Mode="InOut" Type="String" />
+      <Parameter Name="pErrorMessage" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UnPostSaleInvoice">
+      <Parameter Name="pID" Mode="In" Type="Guid" />
+      <Parameter Name="pError" Mode="InOut" Type="String" />
+      <Parameter Name="pErrorMessage" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PostSaleReturn">
+      <Parameter Name="pID" Mode="In" Type="Guid" />
+      <Parameter Name="pError" Mode="InOut" Type="String" />
+      <Parameter Name="pErrorMessage" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UnPostSaleReturn">
+      <Parameter Name="pID" Mode="In" Type="Guid" />
+      <Parameter Name="pError" Mode="InOut" Type="String" />
+      <Parameter Name="pErrorMessage" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PostCustomerPayment">
+      <Parameter Name="pID" Mode="In" Type="Guid" />
+      <Parameter Name="pError" Mode="InOut" Type="String" />
+      <Parameter Name="pErrorMessage" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UnPostCustomerPayment">
+      <Parameter Name="pID" Mode="In" Type="Guid" />
+      <Parameter Name="pError" Mode="InOut" Type="String" />
+      <Parameter Name="pErrorMessage" Mode="InOut" Type="String" />
+      <Parameter Name="pIsThisVoucher" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="Abouts" EntityType="Model.About" />
+    <EntitySet Name="AboutLangs" EntityType="Model.AboutLang" />
+    <EntitySet Name="Categories" EntityType="Model.Category" />
+    <EntitySet Name="CategoryLangs" EntityType="Model.CategoryLang" />
+    <EntitySet Name="Contacts" EntityType="Model.Contact" />
+    <EntitySet Name="Districts" EntityType="Model.District" />
+    <EntitySet Name="Employees" EntityType="Model.Employee" />
+    <EntitySet Name="EmployeeLangs" EntityType="Model.EmployeeLang" />
+    <EntitySet Name="Images" EntityType="Model.Image" />
+    <EntitySet Name="ImageCategories" EntityType="Model.ImageCategory" />
+    <EntitySet Name="Menus" EntityType="Model.Menu" />
+    <EntitySet Name="Products" EntityType="Model.Product" />
+    <EntitySet Name="ProductLangs" EntityType="Model.ProductLang" />
+    <EntitySet Name="Provinces" EntityType="Model.Province" />
+    <EntitySet Name="Services" EntityType="Model.Service" />
+    <EntitySet Name="ServiceLangs" EntityType="Model.ServiceLang" />
+    <EntitySet Name="Testimonials" EntityType="Model.Testimonial" />
+    <EntitySet Name="TestimonialLangs" EntityType="Model.TestimonialLang" />
+    <EntitySet Name="TextDatas" EntityType="Model.TextData" />
+    <EntitySet Name="WhyUS" EntityType="Model.WhyU" />
+    <EntitySet Name="WhyUSDetails" EntityType="Model.WhyUSDetail" />
+    <EntitySet Name="WhyUSDetailLangs" EntityType="Model.WhyUSDetailLang" />
+    <EntitySet Name="WhyUSLangs" EntityType="Model.WhyUSLang" />
+    <AssociationSet Name="FK_District_Province" Association="Model.FK_District_Province">
+      <End Role="Province" EntitySet="Provinces" />
+      <End Role="District" EntitySet="Districts" />
+    </AssociationSet>
+    <EntitySet Name="OrderDetails" EntityType="Model.OrderDetail" />
+    <EntitySet Name="Customers" EntityType="Model.Customer" />
+    <EntitySet Name="Orders" EntityType="Model.Order" />
+  </EntityContainer>
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="AboutID" />
+    </Key>
+    <Property Name="AboutID" Type="Guid" Nullable="false" />
+    <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyBy" Type="Guid" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="AboutLang">
+    <Key>
+      <PropertyRef Name="AboutLangID" />
+    </Key>
+    <Property Name="AboutLangID" Type="Guid" Nullable="false" />
+    <Property Name="AboutID" Type="Guid" />
+    <Property Name="LangID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AboutTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AboutContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AboutContent2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AboutSubContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AboutContent3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AboutName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiBy" Type="Guid" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ParentID" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Ids" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CategoryLang">
+    <Key>
+      <PropertyRef Name="CategoryLangID" />
+    </Key>
+    <Property Name="CategoryLangID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="LangID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Subject" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Contents" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="SearchString" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="DistrictID" />
+    </Key>
+    <Property Name="DistrictID" Type="Int64" Nullable="false" />
+    <Property Name="DistrictCode" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DistrictName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="ProvinceID" Type="Int64" />
+    <NavigationProperty Name="Province" Relationship="Model.FK_District_Province" FromRole="District" ToRole="Province" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="CreatedByDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyBy" Type="Guid" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ImagePath1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LinkTwitter" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LinkFacebook" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LinkInstagram" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LinkLinkedin" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SortOrder" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="EmployeeLang">
+    <Key>
+      <PropertyRef Name="EmployeeLangID" />
+    </Key>
+    <Property Name="EmployeeLangID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="LangID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Position" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="ImageID" Type="Guid" Nullable="false" />
+    <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="PathID" Type="Guid" />
+    <Property Name="IsDefault" Type="Boolean" />
+    <Property Name="SortOrder" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ImageCategory">
+    <Key>
+      <PropertyRef Name="ImageCategoryID" />
+    </Key>
+    <Property Name="ImageCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageCategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="MenuID" Type="Int64" Nullable="false" />
+    <Property Name="MenuCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MenuName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LangID" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MenuType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SortOrder" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Guid" Nullable="false" />
+    <Property Name="LinkCode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ProductCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SalePrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DiscountPrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiBy" Type="Guid" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="IsHot" Type="Boolean" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="ImagePath1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="SaleQuanlity" Type="Int64" />
+  </EntityType>
+  <EntityType Name="ProductLang">
+    <Key>
+      <PropertyRef Name="ProductLangID" />
+    </Key>
+    <Property Name="ProductLangID" Type="Guid" Nullable="false" />
+    <Property Name="ProductID" Type="Guid" />
+    <Property Name="LangID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShortContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LongContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="Int64" Nullable="false" />
+    <Property Name="ProvinceCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ProvinceName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Districts" Relationship="Model.FK_District_Province" FromRole="Province" ToRole="District" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ServiceID" />
+    </Key>
+    <Property Name="ServiceID" Type="Guid" Nullable="false" />
+    <Property Name="LinkCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiBy" Type="Guid" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="ImagePath1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ServiceLang">
+    <Key>
+      <PropertyRef Name="ServiceLangID" />
+    </Key>
+    <Property Name="ServiceLangID" Type="Guid" Nullable="false" />
+    <Property Name="ServiceID" Type="Guid" />
+    <Property Name="LangID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShortContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LongContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Testimonial">
+    <Key>
+      <PropertyRef Name="TestimonialID" />
+    </Key>
+    <Property Name="TestimonialID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImagePath1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SortOrder" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TestimonialLang">
+    <Key>
+      <PropertyRef Name="TestimonialLangID" />
+    </Key>
+    <Property Name="TestimonialLangID" Type="Guid" Nullable="false" />
+    <Property Name="TestimonialID" Type="Int32" />
+    <Property Name="LangID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TextData">
+    <Key>
+      <PropertyRef Name="TextID" />
+    </Key>
+    <Property Name="TextID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LangID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ShortContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LongContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PageCode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="WhyU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="CreatedByDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyBy" Type="Guid" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ImagePath1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SortOrder" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="WhyUSDetail">
+    <Key>
+      <PropertyRef Name="WhyUSDetailID" />
+    </Key>
+    <Property Name="WhyUSDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="CreatedByDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyBy" Type="Guid" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ImagePath1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SortOrder" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="WhyUSDetailLang">
+    <Key>
+      <PropertyRef Name="WhyUSDetailLangID" />
+    </Key>
+    <Property Name="WhyUSDetailLangID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WhyUSDetailID" Type="Int32" />
+    <Property Name="LangID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WhyUSLang">
+    <Key>
+      <PropertyRef Name="WhyUSLangID" />
+    </Key>
+    <Property Name="WhyUSLangID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int32" />
+    <Property Name="LangID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_District_Province">
+    <End Type="Model.Province" Role="Province" Multiplicity="0..1" />
+    <End Type="Model.District" Role="District" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="District">
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailID" />
+    </Key>
+    <Property Name="OrderDetailID" Type="Int64" Nullable="false" />
+    <Property Name="OrderID" Type="Int64" Nullable="false" />
+    <Property Name="ProductID" Type="Guid" Nullable="false" />
+    <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="SubTotal" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Discount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int64" Nullable="false" />
+    <Property Name="CustomerCode" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DistrictID" Type="Int64" />
+    <Property Name="ProvinceID" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int64" Nullable="false" />
+    <Property Name="OrderCode" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CustomerID" Type="Int64" Nullable="false" />
+    <Property Name="SubTotal" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Discount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,13 @@
+D:\Develops\YViet\Sources\YViet-2020-02-26\YViet.Data\bin\Debug\YViet.Data.dll.config
+D:\Develops\YViet\Sources\YViet-2020-02-26\YViet.Data\bin\Debug\YViet.Data.dll
+D:\Develops\YViet\Sources\YViet-2020-02-26\YViet.Data\bin\Debug\YViet.Data.pdb
+D:\Develops\YViet\Sources\YViet-2020-02-26\YViet.Data\bin\Debug\Dapper.dll
+D:\Develops\YViet\Sources\YViet-2020-02-26\YViet.Data\bin\Debug\EntityFramework.dll
+D:\Develops\YViet\Sources\YViet-2020-02-26\YViet.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Develops\YViet\Sources\YViet-2020-02-26\YViet.Data\bin\Debug\MicroOrm.Pocos.SqlGenerator.dll
+D:\Develops\YViet\Sources\YViet-2020-02-26\YViet.Data\bin\Debug\Dapper.xml
+D:\Develops\YViet\Sources\YViet-2020-02-26\YViet.Data\bin\Debug\EntityFramework.xml
+D:\Develops\YViet\Sources\YViet-2020-02-26\YViet.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Develops\YViet\Sources\YViet-2020-02-26\YViet.Data\obj\Debug\YViet.Data.csprojResolveAssemblyReference.cache
+D:\Develops\YViet\Sources\YViet-2020-02-26\YViet.Data\obj\Debug\YViet.Data.dll
+D:\Develops\YViet\Sources\YViet-2020-02-26\YViet.Data\obj\Debug\YViet.Data.pdb

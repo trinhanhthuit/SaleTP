@@ -1,0 +1,147 @@
+body {
+  font-family: Tahoma,Arial,Helvetica,sans-serif !important;
+  font-size: 0.8rem;
+}
+.form-control, .btn {
+  font-size: 0.8rem;
+}
+.nav-sidebar > .nav-item .nav-icon.fa, .nav-sidebar > .nav-item .nav-icon.fab, .nav-sidebar > .nav-item .nav-icon.fad, .nav-sidebar > .nav-item .nav-icon.fal, .nav-sidebar > .nav-item .nav-icon.far, .nav-sidebar > .nav-item .nav-icon.fas, .nav-sidebar > .nav-item .nav-icon.ion, .nav-sidebar > .nav-item .nav-icon.svg-inline--fa {
+  font-size: 0.8rem;
+}
+.table th {
+  text-align: center;
+}
+
+  .table .width_10 {
+    width: 10px;
+    min-width: 10px;
+  }
+
+.table .width_40 {
+  width: 40px;
+  min-width: 40px;
+}
+
+.table .width_50 {
+  width: 50px;
+  min-width: 50px;
+}
+
+.table .width_60 {
+  width: 60px;
+  min-width: 60px;
+}
+
+.table .width_70 {
+  width: 70px;
+  min-width: 70px;
+}
+
+.table .width_80 {
+  width: 80px;
+  min-width: 80px;
+}
+
+.table .width_90 {
+  width: 90px;
+  min-width: 90px;
+}
+
+.table .width_100 {
+  width: 100px;
+  min-width: 100px;
+}
+
+.table .width_110 {
+  width: 110px;
+  min-width: 110px;
+}
+
+.table .width_120 {
+  width: 120px;
+  min-width: 120px;
+}
+
+.table .width_130 {
+  width: 130px;
+  min-width: 130px;
+}
+
+.table .width_140 {
+  width: 140px;
+  min-width: 140px;
+}
+.table .width_150 {
+  width: 150px;
+  min-width: 150px;
+}
+.table .width_180 {
+  width: 180px;
+  min-width: 180px;
+}
+.table .width_200 {
+  width: 200px;
+  min-width: 200px;
+}
+.formsearch .btn {
+  /* position: absolute;
+  bottom: 16px;*/
+  min-width: 100px;
+}
+.formsearch > button {
+  margin-right: 10px;
+  margin-top: 30px;
+
+}
+.modal-50 {
+  max-width: 50%;
+  width: 100%;
+}
+.modal-80 {
+  max-width: 80%;
+  width: 100%;
+}
+.modal-100 {
+  max-width: 100%;
+  width: 100%;
+}
+table .btn {
+    padding:0;
+}
+.col-form-label {
+    text-align:right;
+}
+.form-group .form-check-inline {
+    padding-top:6px;
+}
+.tab-content {
+    margin-top:20px;
+}
+.page-link:hover {
+  cursor: pointer;
+}
+
+.status-delete {
+  width: 16px;
+  height: 16px;
+  background-color: #aaaaaa;
+  float: left;
+  border-radius: 50%;
+}
+.status-watting {
+  width: 16px;
+  height: 16px;
+  background-color: #37daff;
+  float: left;
+  border-radius: 50%;
+}
+.status-replied{
+  width: 16px;
+  height: 16px;
+  background-color: #0dff77;
+  float: left;
+  border-radius: 50%;
+}
+
+
+

@@ -1,0 +1,301 @@
+ <!-- ======= Clients Section ======= -->
+<section id="clients" class="clients">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" *ngFor="let item of logoClients; let i = index">
+        <img src="{{item.imagePath}}" class="img-fluid" alt="">
+      </div>
+    </div>
+  </div>
+</section><!-- End Clients Section -->
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="row content">
+      <div class="col-lg-6" data-aos="fade-right">
+        <h2>{{textdataAbout.title}}</h2>
+        <h3 [innerHTML]="about.aboutTitle">
+        </h3>
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+        <p [innerHTML]="about.aboutContent"></p>
+        <ul id="about-subcontent">
+          <!--<li><i class="ri-check-double-line"></i> Uy tín</li>
+          <li><i class="ri-check-double-line"></i> Chất lượng</li>
+          <li><i class="ri-check-double-line"></i> An tâm</li>-->
+        </ul>
+        <p class="font-italic" [innerHTML]="about.aboutContent2">
+
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End About Section -->
+
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <div class="section-title" data-aos="fade-left">
+      <h2>{{textdataProduct.title}}</h2>
+      <p>{{textdataProduct.shortContent}}</p>
+    </div>
+    <div class="row" data-aos="fade-up">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <ul id="portfolio-flters">
+          <li class="filter-active" (click)="onCategory('ALL')">Tất cả</li>
+          <li (click)="onCategory(item.categoryCode)" *ngFor="let item of categories;">{{item.categoryName}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row" data-aos="fade-up" id="portfolio-prducts">
+      <div class="col-lg-3 col-md-6 portfolio-item HIK" *ngFor="let item of products;">
+        <div class="portfolio-wrap">
+          <img [src]="item.imagePath" class="img-fluid" alt="">
+        </div><div class="portfolio-content text-center">
+          <a href="/detail/{{item.linkCode}}"><span> {{item.productCode}} <br />{{item.productName }}</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- End Portfolio Section -->
+<!-- ======= Counts Section ======= -->
+<!--<section id="counts" class="counts">
+  <div class="container">
+    <div class="row counters">
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up">232</span>
+        <p>Clients</p>
+      </div>
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up">521</span>
+        <p>Projects</p>
+      </div>
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up">1,463</span>
+        <p>Hours Of Support</p>
+      </div>
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up">15</span>
+        <p>Hard Workers</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>-->
+<!-- End Counts Section -->
+<!-- ======= Why Us Section ======= -->
+<section id="why-us" class="why-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-right">
+        <div class="content">
+          <h3>{{whyUs.title}}</h3>
+          <p>
+            {{whyUs.subContent}}
+          </p>
+          <div class="text-center">
+            <a href="#" class="more-btn">xem thêm <i class="bx bx-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 d-flex align-items-stretch">
+        <div class="icon-boxes d-flex flex-column justify-content-center">
+          <div class="row">
+            <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" *ngFor="let item of whyUsDetails; let i = index">
+              <div class="icon-box mt-4 mt-xl-0">
+                <i class="bx bx-receipt"></i>
+                <h4>{{item.title}}</h4>
+                <p>{{item.subContent}}</p>
+              </div>
+            </div>
+            <!--<div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+              <div class="icon-box mt-4 mt-xl-0">
+                <i class="bx bx-cube-alt"></i>
+                <h4>Ullamco laboris ladore pan</h4>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+              </div>
+            </div>
+            <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box mt-4 mt-xl-0">
+                <i class="bx bx-images"></i>
+                <h4>Labore consequatur</h4>
+                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+              </div>
+            </div>-->
+          </div>
+        </div><!-- End .content-->
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Why Us Section -->
+<!-- ======= Cta Section ======= -->
+<section id="cta" class="cta">
+  <div class="container">
+    <div class="text-center" data-aos="zoom-in">
+      <h3>{{textdataCall.title}}</h3>
+      <p>{{textdataCall.shortContent}}</p>
+      <a class="cta-btn" href="#">{{textdataCall.title}}</a>
+    </div>
+  </div>
+</section><!-- End Cta Section -->
+<!-- ======= Services Section ======= -->
+<section id="services" class="services section-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="section-title" data-aos="fade-right">
+          <h2>{{textdataService.title}}</h2>
+          <p>{{textdataService.shortContent}}</p>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-md-6 d-flex align-items-stretch mt-4" *ngFor="let item of services; let i = index">
+            <div class="icon-box" data-aos="zoom-in">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4><a routerLink="dich-vu/{{item.linkCode}}">{{item.serviceName}}</a></h4>
+              <p>{{item.title}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- End Services Section -->
+<!-- ======= Team Section ======= -->
+<section id="team" class="team">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-title section-center text-center" data-aos="fade-right">
+          <h2>{{textdataEmployee.title}}</h2>
+          <p>{{textdataEmployee.shortContent}}</p>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-4" *ngFor="let item of employees; let i = index">
+            <div class="member" data-aos="zoom-in" data-aos-delay="200">
+              <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>{{item.employeeName}}</h4>
+                <span>{{item.position}}</span>
+                <p>{{item.title}}</p>
+                <div class="social">
+                  <a href="{{item.linkTwitter}}"><i class="ri-twitter-fill"></i></a>
+                  <a href="{{item.linkFacebook}}"><i class="ri-facebook-fill"></i></a>
+                  <a href="{{item.linkInstagram}}"><i class="ri-instagram-fill"></i></a>
+                  <a href="{{item.linkLinkedin}}"> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Team Section -->
+<!-- ======= Testimonials Section ======= -->
+<!--<section id="testimonials" class="testimonials section-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="section-title section-center" data-aos="fade-right">
+          <h2>{{textdataTestimonial.title}}</h2>
+          <p>{{textdataTestimonial.shortContent}}</p>
+        </div>
+      </div>
+      <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="testimonial-item col-lg-3" *ngFor="let item of testimonials; let i = index">
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              {{item.content}}
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+            <img src="{{item.imagePath}}" class="testimonial-img" alt="">
+            <h3> {{item.customerName}}</h3>
+            <h4>{{item.position}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>-->
+  <!-- End Testimonials Section -->
+<!-- ======= Testimonials Section ======= -->
+<section id="testimonials" class="testimonials section-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="section-title" data-aos="fade-right">
+          <h2>{{textdataTestimonial.title}}</h2>
+          <p>{{textdataTestimonial.shortContent}}</p>
+        </div>
+      </div>
+      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+        <div class="owl-carousel testimonials-carousel">
+          <div class="testimonial-item">
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+            <h3>Saul Goodman</h3>
+            <h4>Ceo &amp; Founder</h4>
+          </div>
+          <div class="testimonial-item">
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+            <h3>Sara Wilsson</h3>
+            <h4>Designer</h4>
+          </div>
+
+          <div class="testimonial-item">
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+            <h3>Jena Karlis</h3>
+            <h4>Store Owner</h4>
+          </div>
+
+          <div class="testimonial-item">
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+            <h3>Matt Brandon</h3>
+            <h4>Freelancer</h4>
+          </div>
+
+          <div class="testimonial-item">
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+            <h3>John Larson</h3>
+            <h4>Entrepreneur</h4>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Testimonials Section -->
