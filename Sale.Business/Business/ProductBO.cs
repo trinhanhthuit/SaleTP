@@ -144,7 +144,7 @@ namespace Sale.Business
                                         FROM [dbo].[Service] c
                                         INNER JOIN  dbo.ServiceLang l on c.ServiceID = l.ServiceID AND l.LangID=@LangID
                                         LEFT JOIN [Image] i on c.ServiceID = i.PathID
-                                        WHERE IsActive = 1";
+                                        WHERE c.IsActive = 1";
                     return db.Database.Connection.Query<ServiceModel>(sqlQuery, param).ToList();
                 }
             }
