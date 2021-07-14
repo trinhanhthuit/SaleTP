@@ -345,7 +345,6 @@ export class ProductComponent implements OnInit {
         this.imageTemps[i].IsDefault = false;
       }
     }
-   
   }
 
 

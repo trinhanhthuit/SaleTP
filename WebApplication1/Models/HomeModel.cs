@@ -26,7 +26,6 @@ namespace Sale.Models
             TextDatas = new List<TextData>();
             Categories = new List<CategoryModel>();
         }
-
     }
     public class AboutRespone
     {
