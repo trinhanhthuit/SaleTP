@@ -3,3 +3,4 @@ bin
 Documents
 obj
 packages
+Sale.Business/bin/Debug/
