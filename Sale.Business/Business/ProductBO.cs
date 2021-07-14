@@ -135,7 +135,6 @@ namespace Sale.Business
         {
             try
             {
-                string sqlWhere = " WHERE 1=1 ";
                 using (var db = new DBEntities())
                 {
                     DynamicParameters param = new DynamicParameters();
