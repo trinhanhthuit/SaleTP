@@ -5,7 +5,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ImageModel } from 'src/app/model/product';
-
+import { UtilService } from 'src/app/shared/util.service';
 
 //import { UploadFile, UploadInput, UploadOutput } from 'ng-uikit-pro-standard';
 declare var $: any;
@@ -23,6 +23,7 @@ export class ServiceComponent implements OnInit {
   constructor(
     private backEndService: BackEndService,
     private http: HttpClient,
+    private utilService: UtilService
   ) { }
   title = 'san-pham';
   results: any[] = [];
@@ -274,7 +275,10 @@ export class ServiceComponent implements OnInit {
     this.itemDelete = item;
     $("#modalConfirm").modal();
   }
-
+  onKey(row: any, value: any): void {
+    let valueStr = this.utilService.removeSymbol(value);
+    row.LinkCode = valueStr.split(" ").join("-").toLowerCase();
+  }
 
 
 
