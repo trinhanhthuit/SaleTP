@@ -275,6 +275,7 @@ export class ServiceComponent implements OnInit {
     this.itemDelete = item;
     $("#modalConfirm").modal();
   }
+  // change
   onKey(row: any, value: any): void {
     let valueStr = this.utilService.removeSymbol(value);
     row.LinkCode = valueStr.split(" ").join("-").toLowerCase();

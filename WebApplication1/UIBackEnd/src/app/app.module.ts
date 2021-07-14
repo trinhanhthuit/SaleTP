@@ -12,7 +12,7 @@ import { ServiceComponent } from 'src/app/backend/service.component';
 import { AboutComponent } from 'src/app/backend/about.component';
 import { ContactComponent } from 'src/app/backend/contact.component';
 import { AddTextDirective } from './add-text.directive';
-import { UtilService } from 'src/app/shared/util.service';
+import { UtilService } from 'src/app/shared/util.service';// change
 
 @NgModule({
   declarations: [

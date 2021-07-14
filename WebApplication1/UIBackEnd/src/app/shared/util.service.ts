@@ -14,6 +14,7 @@ export class UtilService {
     var y = date.getFullYear();
     return '' + y + '-' + (m <= 9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
   }
+
   public removeSymbol(str:string) {
     var AccentsMap = [
       "aàảãáạăằẳẵắặâầẩẫấậ",
