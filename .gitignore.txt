@@ -1,7 +1,0 @@
-/.vs
-bin
-Documents
-obj
-packages
-/Sale.Business/bin/Debug/
-WebApplication1/logs/

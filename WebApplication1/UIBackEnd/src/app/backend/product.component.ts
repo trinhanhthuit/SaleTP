@@ -326,6 +326,27 @@ export class ProductComponent implements OnInit {
     this.itemDelete = item;
     $("#modalConfirm").modal();
   }
+  onChangeDefault(item: ImageModel): void {
+    //this.imageTemps = this.imageTemps.map((data: ImageModel) => ({
+    //  ImageID: data.ImageID,
+    //  CategoryID: data.CategoryID,
+    //  ImagePath: environment.urlApi + data.ImagePath,
+    //  PathID: data.PathID,
+    //  SortOrder: data.SortOrder,
+    //  IsDefault: false,
+    //  File: ''
+    //}));
+    for (var i = 0; i < this.imageTemps.length; i++) {
+
+      if (this.imageTemps[i].ImageID == item.ImageID) {
+        this.imageTemps[i].IsDefault = true;
+      }
+      else {
+        this.imageTemps[i].IsDefault = false;
+      }
+    }
+   
+  }
 
 
 

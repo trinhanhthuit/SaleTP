@@ -17,6 +17,15 @@ namespace Sale.Models
         public List<WhyUSDetailModel> WhyUsDetails { get; set; }
         public List<TextData> TextDatas { get; set; }
         public List<CategoryModel> Categories { get; set; }
+        public HomeRespone()
+        {
+            Services = new List<ServiceModel>();
+            Testimonials = new List<TestimonialModel>();
+            Employees = new List<EmployeelModel>();
+            WhyUsDetails = new List<WhyUSDetailModel>();
+            TextDatas = new List<TextData>();
+            Categories = new List<CategoryModel>();
+        }
 
     }
     public class AboutRespone
