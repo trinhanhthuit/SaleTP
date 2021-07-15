@@ -23,7 +23,7 @@ import { UtilService } from 'src/app/shared/util.service';// change
     ServiceComponent,
     AboutComponent,
     ContactComponent,
-    AddTextDirective
+    AddTextDirective,
   ],
   imports: [
     BrowserModule,

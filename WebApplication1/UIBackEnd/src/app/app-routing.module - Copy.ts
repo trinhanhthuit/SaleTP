@@ -6,7 +6,7 @@ import { TestimonialComponent } from 'src/app/backend/testimonial.component';
 import { ServiceComponent } from 'src/app/backend/service.component';
 import { AboutComponent } from 'src/app/backend/about.component';
 import { ContactComponent } from 'src/app/backend/contact.component';
-import { LoginComponent } from 'src/app/login.component';
+import { LoginComponent } from './backend/login.component';
 const routes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'category', component: CategoryComponent },
