@@ -53,6 +53,7 @@ namespace Sale.Data
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     
         public virtual int sp_PostPurchaseInvoice(Nullable<System.Guid> pID, ObjectParameter pError, ObjectParameter pErrorMessage)
         {

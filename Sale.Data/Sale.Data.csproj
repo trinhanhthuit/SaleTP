@@ -155,6 +155,9 @@
     <Compile Include="TextData.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="WhyU.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

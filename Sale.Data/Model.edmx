@@ -283,6 +283,28 @@
           <Property Name="LongContent" Type="ntext" />
           <Property Name="PageCode" Type="varchar" MaxLength="200" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Sale.dbo.User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="UserTypeID" />
+            <PropertyRef Name="IsFirstChangePassword" />
+            <PropertyRef Name="Password" />
+          </Key>
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="UserTypeID" Type="int" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="250" />
+          <Property Name="IsFirstChangePassword" Type="bit" Nullable="false" />
+          <Property Name="Avatar" Type="varchar" MaxLength="500" />
+          <Property Name="PageDefault" Type="varchar" MaxLength="500" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="Password" Type="varchar" MaxLength="250" Nullable="false" />
+        </EntityType>
         <EntityType Name="WhyUS">
           <Key>
             <PropertyRef Name="ID" />
@@ -372,6 +394,20 @@
           <EntitySet Name="WhyUSDetail" EntityType="Self.WhyUSDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WhyUSDetailLang" EntityType="Self.WhyUSDetailLang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WhyUSLang" EntityType="Self.WhyUSLang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [User].[UserID] AS [UserID], 
+    [User].[UserName] AS [UserName], 
+    [User].[FullName] AS [FullName], 
+    [User].[UserTypeID] AS [UserTypeID], 
+    [User].[Email] AS [Email], 
+    [User].[IsFirstChangePassword] AS [IsFirstChangePassword], 
+    [User].[Avatar] AS [Avatar], 
+    [User].[PageDefault] AS [PageDefault], 
+    [User].[IsActive] AS [IsActive], 
+    [User].[Password] AS [Password]
+    FROM [dbo].[User] AS [User]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_District_Province" Association="Self.FK_District_Province">
             <End Role="Province" EntitySet="Province" />
             <End Role="District" EntitySet="District" />
@@ -463,6 +499,7 @@
           <EntitySet Name="OrderDetails" EntityType="Model.OrderDetail" />
           <EntitySet Name="Customers" EntityType="Model.Customer" />
           <EntitySet Name="Orders" EntityType="Model.Order" />
+          <EntitySet Name="Users" EntityType="Model.User" />
           </EntityContainer>
         <EntityType Name="About">
           <Key>
@@ -805,6 +842,26 @@
           <Property Name="Discount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="Status" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="UserTypeID" />
+            <PropertyRef Name="IsFirstChangePassword" />
+            <PropertyRef Name="Password" />
+          </Key>
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UserTypeID" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsFirstChangePassword" Type="Boolean" Nullable="false" />
+          <Property Name="Avatar" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PageDefault" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1163,6 +1220,22 @@
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Model.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="PageDefault" ColumnName="PageDefault" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="IsFirstChangePassword" ColumnName="IsFirstChangePassword" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

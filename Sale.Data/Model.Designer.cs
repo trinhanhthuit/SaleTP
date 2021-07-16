@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\ANHTHU\1.PRIVATE\1.SOURCE\1.SOURCE-NEW\SourceAngular\PRIVATE\SaleCamera_v1\SaleCamera\Sale.Data\Model.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\ANHTHU\1.PRIVATE\1.SOURCE\1.SOURCE-NEW\SourceAngular\Sale_GitHub\SaleTP\Sale.Data\Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
