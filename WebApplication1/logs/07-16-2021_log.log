@@ -1,0 +1,3 @@
+2021-07-16 11:16:07,518 ERROR  Sale.Business.UserBO: System.NullReferenceException: Object reference not set to an instance of an object.
+   at Sale.Data.Repository`1.GetList(Func`2 where, Expression`1[] navigationProperties) in D:\ANHTHU\1.PRIVATE\1.SOURCE\1.SOURCE-NEW\SourceAngular\Sale_GitHub\SaleTP\Sale.Data\Repository.cs:line 127
+   at Sale.Business.UserBO.CheckLogin(String userName, String passWord) 
