@@ -101,9 +101,9 @@ export class BackEndService extends BaseService {
   //*********End Contact*********
 
   //********Login********
-  checkLogin(userName: string, passWord: string): Observable<any> {
-    const url = this.url + '/api/login/checklogin?username=' + userName + '&password=' + passWord;
-    return this.get(url);
+  checkLogin(row:any): Observable<any> {
+    const url = this.url + '/api/login/checklogin';
+    return this.post(url, row);
   }
 
 }

@@ -5,7 +5,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ImageModel } from 'src/app/model/product';
-
+import { Router, NavigationEnd } from "@angular/router";
 
 //import { UploadFile, UploadInput, UploadOutput } from 'ng-uikit-pro-standard';
 declare var $: any;
@@ -24,14 +24,17 @@ export class LoginComponent implements OnInit {
   constructor(
     private backEndService: BackEndService,
     private http: HttpClient,
+    private router: Router,
   ) { }
   ngOnInit(): void {
 
   }
   onCheckLogin(): void {
-    this.backEndService.checkLogin(this.row.UserName, this.row.Password).subscribe(res => {
+    this.backEndService.checkLogin(this.row).subscribe(res => {
       if (res.IsSuccess) {
-
+        this.router.navigate(['/']).then(() => {
+          window.location.reload();
+        });
       }
     },
       response => {

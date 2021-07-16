@@ -79,4 +79,5 @@ namespace Sale.Models
         public User User { get; set; }
         public bool IsLogin { get; set; }
     }
+
 }

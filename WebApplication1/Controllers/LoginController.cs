@@ -18,13 +18,13 @@ namespace WebApplication1.Controllers
         {
             this.userBO = this.userBO ?? new UserBO();
         }
-        [HttpGet]
-        public HttpResponseMessage CheckLogin(string username, string password)
+        [HttpPost]
+        public HttpResponseMessage CheckLogin([FromBody] LoginModel login)
         {
             var apiRespone = new ApiResponse { IsSuccess = true };
             var dataResults = new SessionRespone();
-            string passWordSHA = this.HashSHA1(password);
-            var user = userBO.CheckLogin(username, passWordSHA);
+            string passWordSHA = this.HashSHA1(login.PassWord);
+            var user = userBO.CheckLogin(login.UserName, passWordSHA);
             if (user != null)
             {
                 _session.User = user;
@@ -34,6 +34,7 @@ namespace WebApplication1.Controllers
             {
                 _session.User = null;
                 _session.IsLogin = false;
+                apiRespone.IsSuccess = false;
             }
 
             dataResults.User = _session.User;
