@@ -9,7 +9,7 @@ namespace WebApplication1.Utils
 {
     public class Utils
     {
-        static string HashSHA1(string input)
+        public string HashSHA1(string input)
         {
             using (SHA1Managed sha1 = new SHA1Managed())
             {

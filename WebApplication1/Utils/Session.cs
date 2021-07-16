@@ -23,6 +23,7 @@ namespace WebApplication1.Utils
                     return HttpContext.Current.Session[Constant.LANGUAGE].ToString();
             }
             set { HttpContext.Current.Session[Constant.LANGUAGE] = value; }
+
         }
         public bool IsLogin
         {
@@ -44,7 +45,13 @@ namespace WebApplication1.Utils
                 else
                     return (HttpContext.Current.Session[Constant.USER]) as User;
             }
-            set { HttpContext.Current.Session[Constant.USER] = value; }
+            set
+            {
+                if (HttpContext.Current.Session != null)
+                {
+                    HttpContext.Current.Session[Constant.USER] = value;
+                }
+            }
         }
 
         private string GetValueByKeyWord(string Keyword)

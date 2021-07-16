@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\UserBO.cs" />
     <Compile Include="Business\OrderBO.cs" />
     <Compile Include="Business\MenuBO.cs" />
     <Compile Include="Business\ContactBO.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Business\ProvinceBO.cs" />
     <Compile Include="Business\WhyUSBO.cs" />
     <Compile Include="Business\EmployeeBO.cs" />
+    <Compile Include="Interface\IUser.cs" />
     <Compile Include="Interface\IOrder.cs" />
     <Compile Include="Interface\IMenu.cs" />
     <Compile Include="Interface\ICategory.cs" />

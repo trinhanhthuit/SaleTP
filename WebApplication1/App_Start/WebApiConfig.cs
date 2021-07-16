@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace WebApplication1
 {
-    public static class WebApiConfig
+    public static class WebApiConfig 
     {
         public static void Register(HttpConfiguration config)
         {
@@ -23,25 +23,27 @@ namespace WebApplication1
             // Web API routes
            
             config.EnableCors();
-           // config.MapHttpAttributeRoutes();
-           // config.Routes.MapHttpRoute(
-           //     name: "ControllerOnly",
-           //     routeTemplate: "api/{controller}",
-           //     defaults: new { id = RouteParameter.Optional, Param = RouteParameter.Optional },
-           //      constraints: new { httpMethod = new HttpMethodConstraint(allowedMethods) }
-           // );
-           // config.Routes.MapHttpRoute(
-           //    name: "ControllerAndId",
-           //    routeTemplate: "api/{controller}/{id}",
-           //    defaults: new { id = RouteParameter.Optional, Param = RouteParameter.Optional },
-           //     constraints: new { httpMethod = new HttpMethodConstraint(allowedMethods) }
-           //);
-           // config.Routes.MapHttpRoute(
-           //     name: "ControllerAndAction",
-           //     routeTemplate: "api/{controller}/{action}",
-           //     defaults: new { id = RouteParameter.Optional, Param = RouteParameter.Optional },
-           //      constraints: new { httpMethod = new HttpMethodConstraint(allowedMethods) }
-           // );
+            // config.MapHttpAttributeRoutes();
+            // config.Routes.MapHttpRoute(
+            //     name: "ControllerOnly",
+            //     routeTemplate: "api/{controller}",
+            //     defaults: new { id = RouteParameter.Optional, Param = RouteParameter.Optional },
+            //      constraints: new { httpMethod = new HttpMethodConstraint(allowedMethods) }
+            // );
+            // config.Routes.MapHttpRoute(
+            //    name: "ControllerAndId",
+            //    routeTemplate: "api/{controller}/{id}",
+            //    defaults: new { id = RouteParameter.Optional, Param = RouteParameter.Optional },
+            //     constraints: new { httpMethod = new HttpMethodConstraint(allowedMethods) }
+            //);
+            // config.Routes.MapHttpRoute(
+            //     name: "ControllerAndAction",
+            //     routeTemplate: "api/{controller}/{action}",
+            //     defaults: new { id = RouteParameter.Optional, Param = RouteParameter.Optional },
+            //      constraints: new { httpMethod = new HttpMethodConstraint(allowedMethods) }
+            // );
+            // Web API routes
+            config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{action}/{id}",

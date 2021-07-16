@@ -74,4 +74,9 @@ namespace Sale.Models
         public List<Province> Provinces { get; set; }
         public List<District> Districts { get; set; }
     }
+    public class SessionRespone
+    {
+        public User User { get; set; }
+        public bool IsLogin { get; set; }
+    }
 }
