@@ -14,7 +14,7 @@ using log4net;
 
 namespace WebApplication1.Controllers
 {
-    public class ProductController : ApiController
+    public class ProductController : BaseController
     {
         IProduct productBO;
         ITextData textDataBO;

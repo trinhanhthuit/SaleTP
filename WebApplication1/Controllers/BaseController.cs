@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Cors;
 using WebApplication1.Utils;
 using System.Security.Cryptography;
 using System.Text;
+using System.Web.Routing;
 
 namespace WebApplication1.Controllers
 {
@@ -43,6 +44,11 @@ namespace WebApplication1.Controllers
                 return sb.ToString();
             }
         }
+        protected void Initialize(RequestContext requestContext)
+        {
+            //base.Initialize(requestContext);
+        }
+
 
     }
 }
